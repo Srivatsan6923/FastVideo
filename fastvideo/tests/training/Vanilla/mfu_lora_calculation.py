@@ -257,7 +257,7 @@ def _compute_mfu_from_summary(run_summary: dict, grad_accum: int,
 
 def test_distributed_training(profile=False):
     """Run LoRA training in subprocess, then compute MFU."""
-    os.environ["WANDB_MODE"] = "online"
+    os.environ["WANDB_MODE"] = "disabled"
     data_dir = Path("data/crush-smol_processed_t2v")
     if not data_dir.exists():
         print(f"Downloading test dataset to {data_dir}...")
